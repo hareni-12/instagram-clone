@@ -1,0 +1,260 @@
+{
+    "stories":[
+        {
+            "id":1,
+            "username":"My Story",
+            "profilePic":"/src/assets/story1.jpeg"
+        },
+        {
+            "id":2,
+            "username":"megzzz_07",
+            "profilePic":"/src/assets/story2.jpeg"
+        },
+        {
+            "id":3,
+            "username":"itzzz_me_hari",
+            "profilePic":"/src/assets/story3.jpeg"
+        },
+        {
+            "id":4,
+            "username":"kaarthi_23",
+            "profilePic":"/src/assets/story4.jpeg"
+        },
+        {
+            "id":5,
+            "username":"helloitzmekathir",
+            "profilePic":"/src/assets/story5.jpeg"
+        },
+        {
+            "id":6,
+            "username":"im_krish",
+            "profilePic":"/src/assets/story6.jpeg"
+        },
+        {
+            "id":7,
+            "username":"nandha_14",
+            "profilePic":"/src/assets/story7.jpeg"
+        },
+        {
+            "id":8,
+            "username":"shifa_77",
+            "profilePic":"/src/assets/story8.jpeg"
+        },
+        {
+            "id":9,
+            "username":"akshu_14",
+            "profilePic":"/src/assets/story9.jpeg"
+        },
+        {
+            "id":10,
+            "username":"mikasadharshuu_.",
+            "profilePic":"/src/assets/story10.jpeg"
+        },
+        {
+            "id":11,
+            "username":"urekha_01",
+            "profilePic":"/src/assets/story11.jpeg"
+        },
+        {
+            "id":12,
+            "username":"aurora._.veils",
+            "profilePic":"/src/assets/story12.jpeg"
+        },
+        {
+            "id":13,
+            "username":"divya_00",
+            "profilePic":"/src/assets/story13.jpeg"
+        },
+        {
+            "id":14,
+            "username":"cringe_me_shrii",
+            "profilePic":"/src/assets/story14.jpeg"
+        },
+        {
+            "id":15,
+            "username":"sammm---30",
+            "profilePic":"/src/assets/story15.jpeg"
+        },
+        {
+            "id":16,
+            "username":"venky_vicky",
+            "profilePic":"/src/assets/story16.jpeg"
+        },
+        {
+            "id":17,
+            "username":"iblame._.me",
+            "profilePic":"/src/assets/story17.jpeg"
+        },
+        {
+            "id":18,
+            "username":"richi_mat",
+            "profilePic":"/src/assets/story18.jpeg"
+        },
+        {
+            "id":19,
+            "username":"irene_dic",
+            "profilePic":"/src/assets/story19.jpeg"
+        },
+        {
+            "id":20,
+            "username":"mrs_thunder",
+            "profilePic":"/src/assets/story20.jpeg"
+        }
+    ],
+    "posts":[
+        {
+            "id": 1,
+            "username": "poovarasan_4776",
+            "profilePic": "/src/assets/profile1.jpeg",
+            "postImage": "/src/assets/post1.jpeg",
+            "caption": "Beautiful sunset 🌅",
+            "likes": 1200,
+            "timestamp": "2h ago",
+            "location": "Ooty"
+
+        },
+        {
+            "id": 2,
+            "username": "dafaqjesh",
+            "profilePic": "/src/assets/profile2.jpeg",
+            "postImage": "/src/assets/post2.jpeg",
+            "caption": "coffee time☕",
+            "likes": 190,
+            "timestamp": "23h ago",
+            "location": "chennai"
+
+        },
+        {
+            "id": 3,
+            "username": "meggzzz_07",
+            "profilePic": "/src/assets/profile3.jpeg",
+            "postImage": "/src/assets/post3.jpeg",
+            "caption": "Weekend vibes 😎",
+            "likes": 210,
+            "timestamp": "1d ago",
+            "location": "Bangalore"
+        },
+        {
+            "id":4,
+            "username":"naveen_06",
+            "profilePic": "/src/assets/profile4.jpeg",
+            "postImage": "/src/assets/post4.jpeg",
+            "caption": "Travel memories ✈️",
+            "likes": 180,
+            "timestamp": "3h ago",
+            "location": "Goa"
+        },
+        {
+            "id": 5,
+            "username": "ig_chutti",
+            "profilePic": "/src/assets/profile5.jpeg",
+            "postImage": "/src/assets/post5.jpeg",
+            "caption": "Morning workout 💪",
+            "likes": 145,
+            "timestamp": "6h ago",
+            "location": "gym"
+        },
+        {
+            "id": 6,
+            "username": "gersiii_007",
+            "profilePic": "/src/assets/profile6.jpeg",
+            "postImage": "/src/assets/post6.jpeg",
+            "caption": "Enjoying the rain 🌧️",
+            "likes": 199,
+            "timestamp": "8h ago",
+            "location": "maharastra"
+        },
+        {
+            "id": 7,
+            "username": "mikasadharshuu_008",
+            "profilePic": "/src/assets/profile7.jpeg",
+            "postImage": "/src/assets/post7.jpeg",
+            "caption": "Happiness starts with gratitude 😊",
+            "likes": 188,
+            "timestamp": "11h ago",
+            "location": "varnasi"
+        },
+        {
+            "id": 8,
+            "username": "dharshann",
+            "profilePic": "/src/assets/profile8.jpeg",
+            "postImage": "/src/assets/post8.jpeg",
+            "caption": "Beach days are the best 🌊",
+            "likes": 17,
+            "timestamp": "6min ago",
+            "location": "Marina"
+        },
+        {
+            "id": 9,
+            "username": "abdul_rahman",
+            "profilePic": "/src/assets/profile9.jpeg",
+            "postImage": "/src/assets/post9.jpeg",
+            "caption": "Every picture tells a story 📸",
+            "likes": 145,
+            "timestamp": "6h ago",
+            "location": "paris"
+        },
+        {
+            "id": 10,
+            "username": "mahi_07",
+            "profilePic": "/src/assets/profile10.jpeg",
+            "postImage": "/src/assets/post10.jpeg",
+            "caption": "Chasing dreams every day 🚀",
+            "likes": 140,
+            "timestamp": "4d ago",
+            "location": "ranchi"
+        },
+        {
+            "id": 11,
+            "username": "itzz_varun",
+            "profilePic": "/src/assets/profile11.jpeg",
+            "postImage": "/src/assets/post11.jpeg",
+            "caption": "Food tastes better with friends 🍕❤️",
+            "likes": 201,
+            "timestamp": "6h ago",
+            "location": "Mumbai"
+        },
+        {
+            "id": 12,
+            "username": "hareni__12",
+            "profilePic": "/src/assets/profile12.jpeg",
+            "postImage": "/src/assets/post12.jpeg",
+            "caption": "Late night coding 💻✨",
+            "likes": 70,
+            "timestamp": "30s ago",
+            "location": "home"
+        },
+        {
+            "id": 13,
+            "username": "call_me_chandran",
+            "profilePic": "/src/assets/profile13.jpeg",
+            "postImage": "/src/assets/post13.jpeg",
+            "caption": "Adventure awaits 🏕️",
+            "likes": 145,
+            "timestamp": "6h ago",
+            "location": "Mumbai"
+        },
+        {
+            "id": 14,
+            "username": "official_vikram",
+            "profilePic": "/src/assets/profile14.jpeg",
+            "postImage": "/src/assets/post14.jpeg",
+            "caption": "Stay positive and shine ✨",
+            "likes": 219,
+            "timestamp": "4d ago",
+            "location": "kochi"
+        },
+        {
+            "id": 15,
+            "username": "divya_beauty",
+            "profilePic": "/src/assets/profile15.jpeg",
+            "postImage": "/src/assets/post15.jpeg",
+            "caption": "Capturing memories one click at a time 📷",
+            "likes": 15,
+            "timestamp": "1h ago",
+            "location": "museum"
+        }
+
+    ]
+}
+

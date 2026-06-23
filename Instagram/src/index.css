@@ -1,0 +1,612 @@
+
+/* 1. GLOBAL RESET & BASE STYLES*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body, #root {
+  width: 100%;
+  min-height: 100vh;
+  overflow-x: hidden;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+/* 2. APP THEME HOOKS & CUSTOM PROPERTY TOKENS */
+.app-main-container {
+  min-height: 100vh;
+  width: 100%;
+  transition: background 0.2s, color 0.2s;
+}
+
+.light-mode {
+  background: #ffffff !important;
+  color: #000000 !important;
+  --story-gap-color: white;
+}
+    
+.dark-mode {
+  background: #000000 !important;
+  color: #ffffff !important;
+  --story-gap-color: black;
+}
+
+/* 3. MAIN LAYOUT & SIDEBAR STRUCTURE*/
+.main-insta-layout {
+  display: flex;
+  width: 100%;
+  min-height: 100vh;
+}
+
+.sidebar-wrapper {
+  width: 244px;
+  min-width: 244px;
+  flex-shrink: 0;
+}
+
+.sidebar-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 244px;
+  height: 100vh;
+  padding: 24px 12px;
+  display: flex;
+  flex-direction: column;
+}
+
+.Sidebar-item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 12px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.light-mode .Sidebar-item:hover {
+  background: rgba(0, 0, 0, .05);
+}
+
+.dark-mode .Sidebar-item:hover {
+  background: rgba(255, 255, 255, .1);
+}
+
+.sidebar-label {
+  font-size: 16px;
+}
+
+.sidebar-wrapper i,
+.sidebar-wrapper .bi {
+  font-size: 24px;
+}
+
+/* 4. INSTAGRAM LOGO WORKAROUND FOR DARK MODE */
+.logo-wrapper,
+.logo-container {
+  background: transparent !important;
+}
+
+.dark-mode .logo-text,
+.dark-mode .sidebar-container img[alt*="logo"],
+.dark-mode .sidebar-container svg {
+  filter: invert(1) !important;
+  background-color: transparent !important;
+}
+
+/* 5. FEED AREA & CENTRAL DIVIDER*/
+.feed-wrapper {
+  flex: 1;
+  max-width: 630px;
+  margin: auto;
+  padding: 20px;
+}
+
+.middle-divider-line {
+  position: fixed;
+  top: 0;
+  left: 244px;
+  width: 1px;
+  height: 100vh;
+  background: #dbdbdb;
+}
+
+.dark-mode .middle-divider-line {
+  background: #262626;
+}
+
+/* 6. POST CARDS — FULL DARK MODE FIX */
+.insta-card-post {
+  border-radius: 8px;
+  margin-bottom: 24px;
+  padding: 12px;
+  transition: background 0.2s, border-color 0.2s;
+}
+
+/* --- LIGHT MODE CARD --- */
+.light-mode .insta-card-post {
+  background: #ffffff !important;
+  border: 1px solid #dbdbdb !important;
+  color: #000000 !important;
+}
+
+/* --- DARK MODE CARD — ENFORCES FLAT BLACK --- */
+.dark-mode .insta-card-post {
+  background: #000000 !important;
+  border: 1px solid #262626 !important;
+  color: #ffffff !important;
+}
+
+/* Wipe out any nested white background patches inside dark card */
+.dark-mode .insta-card-post *,
+.dark-mode .insta-card-post p,
+.dark-mode .insta-card-post span,
+.dark-mode .insta-card-post div,
+.dark-mode .insta-card-post a,
+.dark-mode .insta-card-post h1,
+.dark-mode .insta-card-post h2,
+.dark-mode .insta-card-post h3 {
+  color: #ffffff !important;
+  background-color: transparent !important;
+}
+
+/* Fix card header (username + location row) */
+.dark-mode .insta-card-post .card-header,
+.dark-mode .insta-card-post .post-header {
+  background: #000000 !important;
+  color: #ffffff !important;
+}
+
+/* Fix card footer (likes, caption, timestamp) */
+.dark-mode .insta-card-post .card-footer,
+.dark-mode .insta-card-post .post-footer,
+.dark-mode .insta-card-post .post-actions {
+  background: #000000 !important;
+  color: #ffffff !important;
+}
+
+/* Keep icons visible with no background tint */
+.dark-mode .insta-card-post i,
+.dark-mode .insta-card-post svg {
+  color: #ffffff !important;
+  background-color: transparent !important;
+}
+
+/*7. RIGHT-SIDE SUGGESTIONS SIDEBAR*/
+.suggestions-sidebar {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.suggestions-sidebar *,
+.suggestions-sidebar div,
+.suggestions-sidebar span,
+.suggestions-sidebar p,
+.suggestions-sidebar button {
+  background-color: transparent !important;
+}
+
+.current-user-item,
+.suggestions-header-row,
+.suggestion-user-item {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  width: 100%;
+  margin-bottom: 14px;
+}
+
+.current-user-item,
+.suggestion-user-item {
+  display: flex !important;
+  justify-content: flex-start !important;
+}
+
+.current-user-item button,
+.suggestion-user-item button {
+  margin-left: auto !important;
+}
+
+.user-meta {
+  display: flex !important;
+  flex-direction: column !important;
+  text-align: left !important;
+  margin-left: 12px;
+}
+
+.current-username,
+.suggestion-username {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.current-fullname,
+.suggestion-subtitle {
+  font-size: 12px;
+}
+
+.section-title-gray {
+  font-size: 14px;
+  font-weight: 600;
+  color: #8e8e8e !important;
+}
+
+.action-link-btn {
+  font-size: 12px;
+  font-weight: 600;
+  border: none !important;
+  cursor: pointer;
+  padding: 0 !important;
+  text-decoration: none;
+}
+
+/* Light Mode Typography */
+.light-mode .current-username,
+.light-mode .suggestion-username { color: #000000 !important; }
+.light-mode .current-fullname,
+.light-mode .suggestion-subtitle { color: #8e8e8e !important; }
+.light-mode .text-dark { color: #000000 !important; }
+
+/* Dark Mode Typography */
+.dark-mode .current-username,
+.dark-mode .suggestion-username { color: #ffffff !important; }
+.dark-mode .current-fullname,
+.dark-mode .suggestion-subtitle { color: #b3b3b3 !important; }
+.dark-mode .text-dark { color: #ffffff !important; }
+
+/* Link Utilities */
+.text-blue { color: #0095f6 !important; }
+.text-gray { color: #8e8e8e !important; }
+
+/* Footer Links */
+.suggestions-footer {
+  margin-top: 24px;
+  font-size: 12px;
+  line-height: 18px;
+}
+.light-mode .suggestions-footer p { color: #c7c7c7 !important; }
+.dark-mode .suggestions-footer p { color: #737373 !important; }
+
+/*8. BUTTONS & UTILITY INTERACTIONS*/
+.theme-toggle-btn {
+  position: fixed;
+  right: 20px;
+  top: 15px;
+  padding: 8px 14px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.dark-mode .theme-toggle-btn {
+  background: #262626;
+  color: white;
+}
+
+.insta-card-post i,
+.feed-wrapper i {
+  cursor: pointer;
+  transition: .2s;
+}
+
+.insta-card-post i:hover,
+.feed-wrapper i:hover {
+  transform: scale(1.15);
+  opacity: .7;
+}
+
+/* 9. STORY SYSTEM — GRADIENT FULLY PROTECTED IN BOTH MODE */
+.story-gradient-ring,
+.story-grey-ring {
+  width: 60px;
+  height: 60px;
+  padding: 3px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/*
+  IMPORTANT: These three selectors are declared AFTER the dark-mode wildcard
+  in Section 6 so they always win the cascade and the gradient is NEVER wiped.
+*/
+.story-gradient-ring,
+.light-mode .story-gradient-ring,
+.dark-mode .story-gradient-ring,
+.dark-mode .insta-card-post .story-gradient-ring {
+  background: linear-gradient(
+    45deg,
+    #f09433,
+    #e6683c,
+    #dc2743,
+    #cc2366,
+    #bc1888
+  ) !important;
+}
+
+/* Viewed Story Ring */
+.story-grey-ring,
+.dark-mode .story-grey-ring {
+  background: #c7c7c7 !important;
+}
+
+/* Inner Border Gap */
+.story-gap {
+  width: 54px;
+  height: 54px;
+  padding: 2px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.light-mode .story-gap {
+  background: #ffffff !important;
+}
+
+.dark-mode .story-gap,
+.dark-mode .insta-card-post .story-gap {
+  background: #000000 !important;
+}
+
+.story-profile-image {
+  width: 50px !important;
+  height: 50px !important;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+}
+
+.story-username {
+  font-size: 12px;
+  margin-top: 6px;
+  width: 72px;
+  text-align: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/*  10. RESPONSIVE MEDIA QUERIES*/
+@media(max-width: 1200px) {
+  .sidebar-wrapper,
+  .sidebar-container {
+    width: 72px;
+    min-width: 72px;
+  }
+  .middle-divider-line {
+    left: 72px;
+  }
+  .sidebar-label,
+  .logo-text {
+    display: none;
+  }
+  .Sidebar-item {
+    justify-content: center;
+  }
+}
+
+@media(max-width: 1150px) {
+  .suggestions-wrapper {
+    display: none;
+  }
+}
+
+@media(max-width: 576px) {
+  .feed-wrapper {
+    padding: 10px;
+  }
+}
+
+/*11. SUGGESTION AVATAR ICON SIZES*/
+.current-user-item i.bi-person-circle,
+.current-user-item .main-avatar-icon {
+  font-size: 44px !important;
+  color: inherit;
+}
+
+.suggestion-user-item i.bi-person-circle,
+.suggestion-user-item .list-avatar-icon {
+  font-size: 32px !important;
+  color: inherit;
+}
+/* =========================
+   LARGE DESKTOP (1400px+)
+========================= */
+@media (min-width: 1400px) {
+  .feed-wrapper {
+    max-width: 700px;
+  }
+}
+
+/* =========================
+   TABLET (768px - 1024px)
+========================= */
+@media (max-width: 1024px) {
+
+  .sidebar-wrapper,
+  .sidebar-container {
+    width: 72px;
+    min-width: 72px;
+  }
+
+  .middle-divider-line {
+    left: 72px;
+  }
+
+  .sidebar-label,
+  .logo-text {
+    display: none;
+  }
+
+  .Sidebar-item {
+    justify-content: center;
+  }
+
+  .feed-wrapper {
+    max-width: 100%;
+    padding: 15px;
+  }
+}
+
+/* =========================
+   MOBILE (Below 768px)
+========================= */
+@media (max-width: 768px) {
+
+  .main-insta-layout {
+    flex-direction: column;
+  }
+
+  .sidebar-wrapper {
+    width: 100%;
+    min-width: 100%;
+    height: auto;
+  }
+
+  .sidebar-container {
+  position: fixed;
+  bottom: 0;
+  top: auto;
+  left: 0;
+  width: 100%;
+  height: 60px;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+
+  padding: 0;
+  z-index: 9999;
+
+  border-top: 1px solid #dbdbdb;
+}
+
+/* Light Mode */
+.light-mode .sidebar-container {
+  background: #ffffff !important;
+  border-top: 1px solid #dbdbdb;
+}
+
+/* Dark Mode */
+.dark-mode .sidebar-container {
+  background: #000000 !important;
+  border-top: 1px solid #262626;
+}
+
+.Sidebar-item {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+}
+  .Sidebar-item {
+    padding: 8px;
+  }
+
+  .sidebar-label,
+  .logo-wrapper,
+  .logo-container {
+    display: none;
+  }
+
+  .middle-divider-line {
+    display: none;
+  }
+
+  .feed-wrapper {
+    width: 100%;
+    max-width: 100%;
+    padding: 10px;
+    margin-bottom: 70px;
+  }
+
+  .suggestions-wrapper {
+    display: none;
+  }
+
+  .theme-toggle-btn {
+    top: 10px;
+    right: 10px;
+    font-size: 12px;
+  }
+}
+
+/* =========================
+   SMALL MOBILE (<480px)
+========================= */
+@media (max-width: 480px) {
+
+  .story-gradient-ring,
+  .story-grey-ring {
+    width: 52px;
+    height: 52px;
+  }
+
+  .story-gap {
+    width: 46px;
+    height: 46px;
+  }
+
+  .story-profile-image {
+    width: 42px !important;
+    height: 42px !important;
+  }
+
+  .story-username {
+    font-size: 10px;
+    width: 60px;
+  }
+
+  .insta-card-post {
+    padding: 8px;
+  }
+
+  .theme-toggle-btn {
+    padding: 6px 10px;
+    font-size: 11px;
+  }
+}
+@media (max-width: 768px) {
+
+  .sidebar-container {
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: space-around !important;
+    align-items: center !important;
+  }
+
+  .sidebar-links-group {
+    display: flex !important;
+    flex-direction: row !important;
+    width: 100%;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  .sidebar-bottom-group {
+    display: none !important;
+  }
+
+  /* Hide unwanted icons */
+  .sidebar-links-group .Sidebar-item:nth-child(3), /* Explore */
+  .sidebar-links-group .Sidebar-item:nth-child(6), /* Notifications */
+  .sidebar-links-group .Sidebar-item:nth-child(7), /* Create */
+  .sidebar-links-group .Sidebar-item:nth-child(8)  /* Profile */
+  {
+    display: none !important;
+  }
+
+  .Sidebar-item {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
